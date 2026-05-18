@@ -62,3 +62,35 @@ public:
         }
     }
 };
+
+int main() {
+    RekeningBank* rekening1 = new RekeningSyariah("SYR001", "Rofif", 5000000);
+    RekeningBank* rekening2 = new RekeningKonvensional("KONV002", "Lutfi", 3000000);
+    RekeningBank* rekening3 = new RekeningPremium("PREM003", "Aldi", 15000000);
+    RekeningBank* rekening4 = new RekeningPremium("PREM004", "Jarwo", 8000000);
+
+    cout << "=========== SALDO AWAL =============\n";
+    rekening1->tampilkan();
+    rekening2->tampilkan();
+    rekening3->tampilkan();
+    rekening4->tampilkan();
+
+    cout << "\n========== PROSES ADMIN BULANAN ==========\n";
+    rekening1->potongAdmin();
+    rekening2->potongAdmin();
+    rekening3->potongAdmin();
+    rekening4->potongAdmin();
+
+    cout << "\n============ SALDO AKHIR ==========\n";
+    rekening1->tampilkan();
+    rekening2->tampilkan();
+    rekening3->tampilkan();
+    rekening4->tampilkan();
+
+    delete rekening1;
+    delete rekening2;
+    delete rekening3;
+    delete rekening4;
+
+    return 0;
+}
