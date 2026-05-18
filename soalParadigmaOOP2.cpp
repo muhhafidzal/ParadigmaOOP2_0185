@@ -44,3 +44,21 @@ public:
         cout << " Konvensional " << namaNasabah << " dipotong Rp 15.000.\n";
     }
 };
+
+class RekeningPremium : public RekeningBank {
+public:
+    RekeningPremium(string noRek, string nama, double saldoAwal)
+        : RekeningBank(noRek, nama, saldoAwal) {}
+
+    void potongAdmin() override {
+        if (saldo > 10000000) 
+        {
+            cout << " Premium " << namaNasabah << " bebas biaya admin.\n";
+        } 
+        else 
+        {
+            saldo -= 50000;
+            cout << " Premium " << namaNasabah << " dipotong Rp 50.000.\n";
+        }
+    }
+};
