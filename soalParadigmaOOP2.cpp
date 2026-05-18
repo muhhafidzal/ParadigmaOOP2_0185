@@ -33,3 +33,14 @@ public:
         cout << " Syariah " << namaNasabah << " bebas biaya admin.\n";
     }
 };
+
+class RekeningKonvensional : public RekeningBank {
+public:
+    RekeningKonvensional(string noRek, string nama, double saldoAwal)
+        : RekeningBank(noRek, nama, saldoAwal) {}
+
+    void potongAdmin() override {
+        saldo -= 15000;
+        cout << " Konvensional " << namaNasabah << " dipotong Rp 15.000.\n";
+    }
+};
