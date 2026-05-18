@@ -23,3 +23,13 @@ public:
              
     }
 };
+
+class RekeningSyariah : public RekeningBank {
+public:
+    RekeningSyariah(string noRek, string nama, double saldoAwal)
+        : RekeningBank(noRek, nama, saldoAwal) {}
+
+    void potongAdmin() override {
+        cout << " Syariah " << namaNasabah << " bebas biaya admin.\n";
+    }
+};
